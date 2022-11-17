@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">jsleep-android</string>
+    <string name="people_button">People Button</string>
+    <string name="add_box_button">Add Box Button</string>
 </resources>
