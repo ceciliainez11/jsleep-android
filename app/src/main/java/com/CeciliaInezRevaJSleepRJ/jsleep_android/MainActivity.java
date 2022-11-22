@@ -20,7 +20,9 @@ import android.widget.ListView;
 import com.google.gson.Gson;
 import java.util.List;
 
+
 public class MainActivity extends AppCompatActivity{
+
     protected static Account requestLog;
 
     @Override
@@ -47,14 +49,12 @@ public class MainActivity extends AppCompatActivity{
         ListView listView = findViewById(R.id.listView_id);
         listView.setAdapter(adapt);
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
         getMenuInflater().inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
-
     public String loadJSONFromAsset(){
         try {
             InputStream is = MainActivity.this.getAssets().open("randomRoomList.json");
@@ -69,7 +69,6 @@ public class MainActivity extends AppCompatActivity{
             return null;
         }
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
         switch(item.getItemId()){
