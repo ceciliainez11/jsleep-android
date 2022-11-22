@@ -1,5 +1,6 @@
 package com.CeciliaInezRevaJSleepRJ.jsleep_android;
 
+import com.CeciliaInezRevaJSleepRJ.jsleep_android.model.Account;
 import com.CeciliaInezRevaJSleepRJ.jsleep_android.model.Room;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +21,8 @@ import com.google.gson.Gson;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity{
+    protected static Account requestLog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity{
         ArrayList<Room> ListRoom = new ArrayList<>();
         ArrayList<String> listId = new ArrayList<>();
         Gson json = new Gson();
+
         try{
             filepath = getAssets().open("randomRoomList.json");
             BufferedReader readfile = new BufferedReader(new InputStreamReader(filepath));
@@ -62,8 +66,7 @@ public class MainActivity extends AppCompatActivity{
             return gson;
         } catch (IOException ex) {
             ex.printStackTrace();
-            return
-                    null;
+            return null;
         }
     }
 
