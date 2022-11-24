@@ -21,7 +21,7 @@ import retrofit2.Response;
 
 public class RegisterActivity extends AppCompatActivity {
     BaseApiService mApiService;
-    EditText username, password, email;
+    EditText name, password, email;
     Context mContext;
 
     @Override
@@ -29,28 +29,28 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        Button register = findViewById(R.id.buttonRegister);
+        name = findViewById(R.id.nameRegister);
+        password = findViewById(R.id.passwordRegister);
+        email = findViewById(R.id.emailRegister);
+
         mApiService = UtilsApi.getApiService();
         mContext = this;
-        username = findViewById(R.id.Username);
-        password = findViewById(R.id.password);
-        email = findViewById(R.id.Username2);
-
-        Button register = findViewById(R.id.buttonRegister);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 requestRegister();
+                MainActivity.accountRegister = requestRegister();
             }
         });
     }
 
     protected Account requestRegister(){
-        mApiService.register(username.getText().toString(),email.getText().toString(), password.getText().toString()).enqueue(new Callback<Account>() {
+        mApiService.register(name.getText().toString(), email.getText().toString(), password.getText().toString()).enqueue(new Callback<Account>() {
             @Override
             public void onResponse(Call<Account> call, Response<Account> response) {
                 if(response.isSuccessful()){
-                    MainActivity.requestLog = response.body();
                     Intent move = new Intent(RegisterActivity.this, MainActivity.class);
                     startActivity(move);
                     Toast.makeText(mContext, "Register Successfull", Toast.LENGTH_SHORT).show();
@@ -63,7 +63,6 @@ public class RegisterActivity extends AppCompatActivity {
                 Toast.makeText(mContext, "Already registered", Toast.LENGTH_SHORT).show();
             }
         });
-
         return null;
     }
 }

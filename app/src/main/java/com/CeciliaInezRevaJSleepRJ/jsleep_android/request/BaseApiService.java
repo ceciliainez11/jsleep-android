@@ -1,6 +1,8 @@
 package com.CeciliaInezRevaJSleepRJ.jsleep_android.request;
 
 import com.CeciliaInezRevaJSleepRJ.jsleep_android.model.Account;
+import com.CeciliaInezRevaJSleepRJ.jsleep_android.model.Room;
+
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
@@ -13,9 +15,12 @@ public interface BaseApiService {
     @GET("account/{id}")
     Call<Account> getAccount (@Path("id") int id);
 
-    @POST("login/{id}")
-    Call<Account> login (@Query("email") String email, @Query("password") String password);
+    @GET("room/{id}")
+    Call<Room> getRoom (@Path("id") int id);
 
-    @GET("account/register")
-    Call<Account> register (@Query("name") String name, @Query("email") String email, @Query("password") String password);
+    @POST("account/login")
+    Call<Account> login (@Query("email") String email, @Query("password") String Password);
+
+    @POST("account/register")
+    Call<Account> register (@Query("name") String name, @Query("email") String email, @Query("password") String Password);
 }

@@ -19,7 +19,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
+
     public static Account loggedAccount;
+
     BaseApiService mApiService;
     EditText username, password;
     Context mContext;
@@ -28,27 +30,25 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        Button buttonLogin = findViewById(R.id.buttonLogin);
+        buttonLogin.setOnClickListener(i -> startActivity(new Intent(this, MainActivity.class)));
+
+        TextView RegisterNowButton = findViewById(R.id.RegisterNowButton);
+        RegisterNowButton.setOnClickListener(i -> startActivity(new Intent(this, RegisterActivity.class)));
+
         mApiService = UtilsApi.getApiService();
         mContext = this;
-        Button buttonLogin = findViewById(R.id.buttonLogin);
-        TextView buttonRegister = findViewById(R.id.RegisterNowButton);
+
+        TextView register = findViewById(R.id.RegisterNowButton);
         username = findViewById(R.id.usernameTextBox);
         password = findViewById(R.id.passwordTextBox);
-
-        buttonRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-                Intent move = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(move);
-            }
-        });
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Account account = requestLogin();
-               Intent move = new Intent(LoginActivity.this, MainActivity.class);
-               startActivity(move);
+                //Account account = requestAccount();
+                Account login = requestLogin();
             }
         });
     }
@@ -78,10 +78,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Account> call, Response<Account> response) {
                 if(response.isSuccessful()){
-                    MainActivity.requestLog = response.body();
+                    Account account;
+                    account = response.body();
+                    System.out.println(account.toString());
                     Intent move = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(move);
-                    Toast.makeText(mContext, "Login Successfull", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, "Login Successful", Toast.LENGTH_SHORT).show();
+                    MainActivity.accountLogin = account;
                 }
             }
             @Override
