@@ -5,15 +5,20 @@ import com.CeciliaInezRevaJSleepRJ.jsleep_android.model.Room;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import android.content.Context;
 import android.content.Intent;
 import android.view.Menu;
 import android.os.Bundle;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -24,62 +29,47 @@ import com.google.gson.reflect.TypeToken;
 
 
 public class MainActivity extends AppCompatActivity{
-    Gson json = new Gson();
-
-    protected static Object accountLogin;
-    protected static Account accountRegister;
+    protected static Account loginacc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        InputStream filepath = null;
+        ArrayList<Room> ListRoom = new ArrayList<>();
+        ArrayList<String> listId = new ArrayList<>();
+        Gson json = new Gson();
 
-        String jsonString = toStringJSON(getApplicationContext(), "randomRoomList.json");
-        Type token = new TypeToken<ArrayList<Room>>() {
-        }.getType();
-        ArrayList<Room> room = json.fromJson(jsonString, token);
-
-//        ArrayAdapter<Room> adapter = new ArrayAdapter<Room>(this, R.layout.roomlistview, room);
-//        ListView listView = findViewById(R.id.room_list_view);
-//        listView.setAdapter(adapter);
-    }
-
-    private static String toStringJSON(Context context, String nameFile) {
-        String Json;
         try {
-            InputStream is = context.getAssets().open(nameFile);
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            Json = new String(buffer, "UTF-8");
+            filepath = getAssets().open("randomRoomList.json");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(filepath));
+            Room[] temp = json.fromJson(reader, Room[].class);
+            Collections.addAll(ListRoom, temp);
         } catch (IOException e) {
             e.printStackTrace();
-            return null;
         }
-        return Json;
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return super.onCreateOptionsMenu(menu);
+        for (Room r : ListRoom ) {
+            listId.add(r.name);
+        }
+        ArrayAdapter<String> roomArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,listId);
+        ListView listView = findViewById(R.id.listView_id);
+        listView.setAdapter(roomArrayAdapter);
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item){
-        switch(item.getItemId()){
-            case R.id.people_button:
-            Toast.makeText(this, "Opening", Toast.LENGTH_SHORT).show();
-            Intent aboutMi = new Intent(MainActivity.this, AboutMeActivity.class);
-            startActivity(aboutMi);
-            break;
-
-            default:
-                return super.onOptionsItemSelected(item);
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.people_button) {
+            Intent move = new Intent(MainActivity.this, AboutMeActivity.class);
+            startActivity(move);
+            return true;
         }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
         return true;
     }
 }

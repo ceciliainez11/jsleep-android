@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.CeciliaInezRevaJSleepRJ.jsleep_android.model.Account;
 import com.CeciliaInezRevaJSleepRJ.jsleep_android.request.BaseApiService;
 import com.CeciliaInezRevaJSleepRJ.jsleep_android.request.UtilsApi;
@@ -21,46 +20,51 @@ import retrofit2.Response;
 
 public class RegisterActivity extends AppCompatActivity {
     BaseApiService mApiService;
-    EditText name, password, email;
+    EditText name, email, password;
     Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        mApiService = UtilsApi.getApiService();
+        mContext = this;
 
-        Button register = findViewById(R.id.buttonRegister);
+        Button register = findViewById(R.id.RegisterButton);
         name = findViewById(R.id.nameRegister);
         password = findViewById(R.id.passwordRegister);
         email = findViewById(R.id.emailRegister);
 
-        mApiService = UtilsApi.getApiService();
-        mContext = this;
-
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                requestRegister();
-                MainActivity.accountRegister = requestRegister();
+                String emailT = email.getText().toString();
+                String passwordT = password.getText().toString();
+                String nameT = name.getText().toString();
+                Account account = requestRegister(emailT, passwordT, nameT);
             }
         });
     }
 
-    protected Account requestRegister(){
-        mApiService.register(name.getText().toString(), email.getText().toString(), password.getText().toString()).enqueue(new Callback<Account>() {
+    protected Account requestRegister(String email, String password, String name ){
+        System.out.println("tEST1");
+        mApiService.register(email, password, name).enqueue(new Callback<Account>() {
             @Override
             public void onResponse(Call<Account> call, Response<Account> response) {
                 if(response.isSuccessful()){
-                    Intent move = new Intent(RegisterActivity.this, MainActivity.class);
+                    Account account;
+                    account = response.body();
+                    System.out.println(account.toString());
+                    Intent move = new Intent(RegisterActivity.this, LoginActivity.class);
                     startActivity(move);
-                    Toast.makeText(mContext, "Register Successfull", Toast.LENGTH_SHORT).show();
+                    System.out.println("tEST2");
                 }
             }
 
             @Override
-            public void onFailure(Call<Account> call, Throwable t){
-                System.out.println(t.toString());
-                Toast.makeText(mContext, "Already registered", Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<Account> call, Throwable t) {
+                Toast.makeText(mContext, "Account Already Registered", Toast.LENGTH_SHORT).show();
+                System.out.println("tEST3");
             }
         });
         return null;
