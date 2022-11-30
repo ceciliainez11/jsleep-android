@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".AboutMeActivity">
 
-
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -125,70 +123,153 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/CardViewAccount"
+        android:layout_width="419dp"
+        android:layout_height="331dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerRenterButton">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="340dp">
+
+            <TextView
+                android:id="@+id/addressRegisterRenter"
+                android:layout_width="71dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="77dp"
+                android:layout_marginBottom="28dp"
+                android:text="Address"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/phoneNumberRegisterRenter"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/inputAddress"
+                android:layout_width="71dp"
+                android:layout_height="22dp"
+                android:layout_marginEnd="100dp"
+                android:layout_marginBottom="201dp"
+                android:text="Gedung DTE"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/phoneNumberRegisterRenter"
+                android:layout_width="71dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="77dp"
+                android:layout_marginBottom="150dp"
+                android:text="Phone Number"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/nameRegisterRenter"
+                android:layout_width="43dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="77dp"
+                android:layout_marginBottom="27dp"
+                android:text="Name"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/addressRegisterRenter"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/inputName"
+                android:layout_width="43dp"
+                android:layout_height="22dp"
+                android:layout_marginEnd="130dp"
+                android:layout_marginBottom="28dp"
+                android:text="NetlabStore"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/inputAddress"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/inputPhone"
+                android:layout_width="71dp"
+                android:layout_height="22dp"
+                android:layout_marginEnd="103dp"
+                android:layout_marginBottom="156dp"
+                android:text="0812943324"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
         android:id="@+id/CardViewRegister"
         android:layout_width="415dp"
-        android:layout_height="346dp"
+        android:layout_height="340dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="423dp"
-            android:layout_height="400dp">
+            android:layout_width="match_parent"
+            android:layout_height="344dp">
 
             <EditText
                 android:id="@+id/nameAboutMe"
-                android:layout_width="223dp"
+                android:layout_width="166dp"
                 android:layout_height="48dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="64dp"
-                android:layout_marginBottom="268dp"
+                android:layout_marginBottom="8dp"
                 android:hint="Name"
                 android:inputType="text"
                 android:minHeight="48dp"
                 android:padding="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/addressAboutMe"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
                 android:id="@+id/addressAboutMe"
-                android:layout_width="223dp"
+                android:layout_width="166dp"
+                android:layout_height="54dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="64dp"
+                android:layout_marginBottom="1dp"
+                android:hint="Address"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:padding="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/phoneNumberAboutMe"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/phoneNumberAboutMe"
+                android:layout_width="168dp"
                 android:layout_height="48dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="64dp"
-                android:layout_marginBottom="212dp"
-                android:hint="Address"
-                android:inputType="text"
-                android:minHeight="48dp"
-                android:padding="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <EditText
-                android:id="@+id/phoneNumberAboutMe"
-                android:layout_width="223dp"
-                android:layout_height="48dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="136dp"
-                android:layout_marginBottom="156dp"
+                android:layout_marginTop="1dp"
                 android:hint="Phone Number"
                 android:inputType="text"
                 android:minHeight="48dp"
                 android:padding="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addressAboutMe" />
 
             <Button
                 android:id="@+id/requestRegister"
                 android:layout_width="133dp"
                 android:layout_height="39dp"
-                android:layout_marginStart="64dp"
+                android:layout_marginStart="63dp"
                 android:layout_marginBottom="79dp"
                 android:text="REGISTER"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -199,7 +280,7 @@
                 android:id="@+id/requestCancel"
                 android:layout_width="135dp"
                 android:layout_height="39dp"
-                android:layout_marginEnd="64dp"
+                android:layout_marginEnd="65dp"
                 android:layout_marginBottom="79dp"
                 android:text="CANCEL"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -208,89 +289,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/CardViewAccount"
-        android:layout_width="419dp"
-        android:layout_height="331dp"
-        android:layout_marginTop="3dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerRenterButton">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="423dp"
-            android:layout_height="400dp">
-
-            <TextView
-                android:id="@+id/nameRegisterRenter"
-                android:layout_width="43dp"
-                android:layout_height="22dp"
-                android:layout_marginStart="75dp"
-                android:layout_marginBottom="290dp"
-                android:text="Name"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/NetlabStore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="130dp"
-                android:layout_marginBottom="290dp"
-                android:text="NetlabStore"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <TextView
-                android:id="@+id/addressRegisterRenter"
-                android:layout_width="71dp"
-                android:layout_height="22dp"
-                android:layout_marginStart="75dp"
-                android:layout_marginBottom="240dp"
-                android:text="Address"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/GedungDte"
-                android:layout_width="149dp"
-                android:layout_height="22dp"
-                android:layout_marginEnd="65dp"
-                android:layout_marginBottom="240dp"
-                android:text="Gedung DTE Lantai 2"
-                android:textAlignment="viewStart"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <TextView
-                android:id="@+id/phoneNumberRegisterRenter"
-                android:layout_width="71dp"
-                android:layout_height="22dp"
-                android:layout_marginStart="75dp"
-                android:layout_marginBottom="190dp"
-                android:text="Phone Number"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/numberRegister"
-                android:layout_width="115dp"
-                android:layout_height="23dp"
-                android:layout_marginEnd="99dp"
-                android:layout_marginBottom="190dp"
-                android:text="081234567890"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

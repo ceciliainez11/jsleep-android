@@ -48,7 +48,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     protected Account requestRegister(String email, String password, String name ){
         System.out.println("tEST1");
-        mApiService.register(email, password, name).enqueue(new Callback<Account>() {
+        mApiService.register(name, email, password).enqueue(new Callback<Account>() {
             @Override
             public void onResponse(Call<Account> call, Response<Account> response) {
                 if(response.isSuccessful()){

@@ -81,9 +81,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<Account> call, Response<Account> response) {
                 if(response.isSuccessful()){
                     System.out.println("login sukses");
-                    Account account;
-                    account = response.body();
-                    System.out.println(account.toString());
+                    MainActivity.loginacc = response.body();
                     Intent move = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(move);
                 }

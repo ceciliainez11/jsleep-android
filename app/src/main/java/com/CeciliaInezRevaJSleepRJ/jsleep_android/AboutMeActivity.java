@@ -3,7 +3,6 @@ package com.CeciliaInezRevaJSleepRJ.jsleep_android;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import com.CeciliaInezRevaJSleepRJ.jsleep_android.model.Account;
 import com.CeciliaInezRevaJSleepRJ.jsleep_android.model.Renter;
 import com.CeciliaInezRevaJSleepRJ.jsleep_android.request.BaseApiService;
 import com.CeciliaInezRevaJSleepRJ.jsleep_android.request.UtilsApi;
@@ -16,6 +15,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,9 +25,7 @@ public class AboutMeActivity extends AppCompatActivity {
 
     TextView name, email, balance;
 
-    Button RegistButton; Button RegistConfirm, RegistCancel;
-    CardView RegistCard; CardView RenterCard; CardView RegisterAccCard;
-    TextView NameAcc, NameAddress, PhoneNumber; TextView RenterNameFill, AddressFill, PhoneNumberFill;
+    Button RegistButton, RegistConfirm, RegistCancel;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -50,51 +48,47 @@ public class AboutMeActivity extends AppCompatActivity {
         name.setText(MainActivity.loginacc.name);
         email.setText(MainActivity.loginacc.email);
         balance.setText(String.valueOf(MainActivity.loginacc.balance));
-
         RegistButton = findViewById(R.id.registerRenterButton);
 
+        //Second Condition
+        EditText nameAccount = findViewById(R.id.nameAboutMe);
+        EditText AddressAccount = findViewById(R.id.addressAboutMe);
+        EditText PhoneNumberAccount = findViewById(R.id.phoneNumberAboutMe);
         RegistConfirm = findViewById(R.id.requestRegister);
         RegistCancel = findViewById(R.id.requestCancel);
-        RenterCard = findViewById(R.id.CardViewRegister);
+        CardView CardViewRegister = findViewById(R.id.CardViewRegister);
 
+        //Third Condition
+        TextView InputName = findViewById(R.id.inputName);
+        TextView InputAddress = findViewById(R.id.inputAddress);
+        TextView InputPhone = findViewById(R.id.inputPhone);
+        CardView CardViewAccount = findViewById(R.id.CardViewAccount);
 
-
-        NameAcc = findViewById(R.id.nameAboutMe);
-        NameAddress = findViewById(R.id.addressAboutMe);
-        PhoneNumber = findViewById(R.id.phoneNumberAboutMe);
-
-
-
-        RegisterAccCard = findViewById(R.id.CardViewAccount);
-        NameAcc = findViewById(R.id.NetlabStore);
-        AddressFill = findViewById(R.id.GedungDte);
-
-        PhoneNumberFill = findViewById(R.id.numberRegister);
+        CardViewRegister.setVisibility(CardView.INVISIBLE);
+        CardViewAccount.setVisibility(CardView.INVISIBLE);
 
         if (MainActivity.loginacc.renter == null)
         {
-            RegistCard.setVisibility(CardView.VISIBLE);
-            RegisterAccCard.setVisibility(CardView.GONE);
-            RenterCard.setVisibility(CardView.GONE);
-
+//            CardViewRegister.setVisibility(CardView.INVISIBLE);
+//            CardViewAccount.setVisibility(CardView.INVISIBLE);
 
             RegistButton.setOnClickListener(new View.OnClickListener()
             {
                 @Override
                 public void onClick(View view) {
-                    RegistCard.setVisibility(CardView.GONE);
-                    RenterCard.setVisibility(CardView.VISIBLE);
-                    RegisterAccCard.setVisibility(CardView.GONE);
+                    RegistButton.setVisibility(Button.INVISIBLE);
+                    CardViewRegister.setVisibility(CardView.VISIBLE);
+                    CardViewAccount.setVisibility(CardView.INVISIBLE);
 
                     RegistConfirm.setOnClickListener(new View.OnClickListener()
                     {
                         @Override
                         public void onClick(View view) {
-                            Renter renter = requestRenter(MainActivity.loginacc.id, NameAcc.getText().toString(),
-                                    NameAddress.getText().toString(), PhoneNumber.getText().toString());
+                            Renter renter = requestRenter(MainActivity.loginacc.id, nameAccount.getText().toString(),
+                                    AddressAccount.getText().toString(), PhoneNumberAccount.getText().toString());
 
-                            Intent move = new Intent(AboutMeActivity.this, AboutMeActivity.class);
-                            startActivity(move);
+//                            Intent move = new Intent(AboutMeActivity.this, AboutMeActivity.class);
+//                            startActivity(move);
                         }
 
                     });
@@ -102,30 +96,27 @@ public class AboutMeActivity extends AppCompatActivity {
 
                         @Override
                         public void onClick(View view) {
-
-                            RenterCard.setVisibility(CardView.GONE);
-                            RegisterAccCard.setVisibility(CardView.GONE);
-                            RegistCard.setVisibility(CardView.VISIBLE);
+                            CardViewRegister.setVisibility(CardView.INVISIBLE);
+                            CardViewAccount.setVisibility(CardView.INVISIBLE);
                         }
                     });
                 }
             });
 
         } else {
-            RegistCard.setVisibility(CardView.GONE);
-            RegisterAccCard.setVisibility(CardView.VISIBLE);
-            RenterCard.setVisibility(CardView.GONE);
+            RegistButton.setVisibility(Button.INVISIBLE);
+            CardViewRegister.setVisibility(CardView.INVISIBLE);
+            CardViewAccount.setVisibility(CardView.VISIBLE);
 
-            RenterNameFill.setText(MainActivity.loginacc.renter.username);
-            PhoneNumberFill.setText(MainActivity.loginacc.renter.address);
-            AddressFill.setText(MainActivity.loginacc.renter.phoneNumber);
+            InputName.setText(MainActivity.loginacc.renter.username);
+            InputAddress.setText(MainActivity.loginacc.renter.address);
+            InputPhone.setText(MainActivity.loginacc.renter.phoneNumber);
         }
     }
 
     protected Renter requestRenter(int id, String username, String address, String phone) {
         mApiService.registerRenter(id, username, address, phone).enqueue(new Callback<Renter>() {
             @Override
-
             public void onResponse(Call<Renter> call, Response<Renter> response) {
 
                 if (response.isSuccessful()) {
@@ -133,15 +124,14 @@ public class AboutMeActivity extends AppCompatActivity {
                     renter = response.body();
                     MainActivity.loginacc.renter = renter;
                     System.out.println("Renter Registered Success");
+                    Intent move = new Intent(AboutMeActivity.this, AboutMeActivity.class);
+                    startActivity(move);
                     Toast.makeText(mContext, "Registered Renter", Toast.LENGTH_SHORT).show();
-
                 }
             }
-
-
-
             @Override
             public void onFailure(Call<Renter> call, Throwable t) {
+                System.out.println("GAGAL");
                 Toast.makeText(mContext, "Failed to Register!", Toast.LENGTH_SHORT).show();
             }
         });
