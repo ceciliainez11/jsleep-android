@@ -51,7 +51,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/RegisterButton"
+        android:id="@+id/TopUpButton"
         android:layout_width="104dp"
         android:layout_height="48dp"
         android:layout_marginStart="232dp"
