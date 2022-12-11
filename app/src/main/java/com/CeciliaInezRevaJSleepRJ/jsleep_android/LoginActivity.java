@@ -1,16 +1,15 @@
 package com.CeciliaInezRevaJSleepRJ.jsleep_android;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.annotation.SuppressLint;
 import android.content.Context;
-import android.os.Bundle;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.CeciliaInezRevaJSleepRJ.jsleep_android.R.id;
 import com.CeciliaInezRevaJSleepRJ.jsleep_android.model.Account;
 import com.CeciliaInezRevaJSleepRJ.jsleep_android.request.BaseApiService;
 import com.CeciliaInezRevaJSleepRJ.jsleep_android.request.UtilsApi;
@@ -19,78 +18,55 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
-
     BaseApiService mApiService;
-    EditText username, password, email;
+    EditText email, password;
     Context mContext;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         mApiService = UtilsApi.getApiService();
         mContext = this;
 
-        TextView register = findViewById(R.id.RegisterNowButton);
-        username = findViewById(R.id.usernameTextBox);
-        password = findViewById(R.id.passwordTextBox);
+        try {
+            this.getSupportActionBar().hide();
+        }
+        catch (NullPointerException e){}
 
+        email = findViewById(R.id.inputEmail);
+        password = findViewById(R.id.inputPassword);
         Button buttonLogin = findViewById(R.id.buttonLogin);
+        TextView buttonRegisterNow = findViewById(R.id.buttonRegisterNow);
+
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String emailT = username.getText().toString();
-                String passT = password.getText().toString();
-                Account account = requestLogin(emailT, passT);
-                System.out.println("Button tekan");
+                requestLogin();
             }
         });
 
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent move = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(move);
-            }
+        buttonRegisterNow.setOnClickListener(i ->
+        {
+            Toast.makeText(this, "Register Success", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
         });
+
     }
 
-    protected Account requestAccount(){
-        mApiService.getAccount(0).enqueue(new Callback<Account>() {
+    protected Account requestLogin() {
+        mApiService.login(email.getText().toString(), password.getText().toString()).enqueue(new Callback<Account>() {
             @Override
             public void onResponse(Call<Account> call, Response<Account> response) {
-                if(response.isSuccessful()){
-                    Account account;
-                    account = response.body();
-                    System.out.println(account.toString());
-                }
-            }
-            @Override
-            public void onFailure(Call<Account> call, Throwable t) {
-                Toast.makeText(mContext, "no Account id = 0", Toast.LENGTH_SHORT).show();
-            }
-        });
-        return null;
-    }
-
-    protected Account requestLogin(String email, String password){
-        System.out.println("Req login");
-        mApiService.login(email,password).enqueue(new Callback<Account>() {
-            @Override
-            public void onResponse(Call<Account> call, Response<Account> response) {
-                if(response.isSuccessful()){
-                    System.out.println("login sukses");
-                    MainActivity.loginacc = response.body();
-                    Intent move = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(move);
-                }
+                MainActivity.loginacc = response.body();
+                Toast.makeText(mContext, "Hello " + MainActivity.loginacc.name, Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
             }
 
             @Override
             public void onFailure(Call<Account> call, Throwable t) {
-                Toast.makeText(mContext, "Login Failed", Toast.LENGTH_SHORT).show();
-                System.out.println("login gagal");
+                Toast.makeText(mContext, "Wrong Email/Password", Toast.LENGTH_SHORT).show();
             }
         });
         return null;

@@ -1,7 +1,10 @@
 package com.CeciliaInezRevaJSleepRJ.jsleep_android;
 
+import com.CeciliaInezRevaJSleepRJ.jsleep_android.model.Account;
+import com.CeciliaInezRevaJSleepRJ.jsleep_android.request.BaseApiService;
+import com.CeciliaInezRevaJSleepRJ.jsleep_android.request.UtilsApi;
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,10 +12,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import com.CeciliaInezRevaJSleepRJ.jsleep_android.model.Account;
-import com.CeciliaInezRevaJSleepRJ.jsleep_android.request.BaseApiService;
-import com.CeciliaInezRevaJSleepRJ.jsleep_android.request.UtilsApi;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -20,9 +19,10 @@ import retrofit2.Response;
 
 public class RegisterActivity extends AppCompatActivity {
     BaseApiService mApiService;
-    EditText name, email, password;
+    EditText username, email, password;
     Context mContext;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,8 +30,13 @@ public class RegisterActivity extends AppCompatActivity {
         mApiService = UtilsApi.getApiService();
         mContext = this;
 
-        Button register = findViewById(R.id.RegisterButton);
-        name = findViewById(R.id.nameRegister);
+        try {
+            this.getSupportActionBar().hide();
+        }
+        catch (NullPointerException e){}
+
+        Button register = findViewById(R.id.buttonRegisterPage);
+        username = findViewById(R.id.nameRegister);
         password = findViewById(R.id.passwordRegister);
         email = findViewById(R.id.emailRegister);
 
@@ -40,7 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String emailT = email.getText().toString();
                 String passwordT = password.getText().toString();
-                String nameT = name.getText().toString();
+                String nameT = username.getText().toString();
                 Account account = requestRegister(emailT, passwordT, nameT);
             }
         });
@@ -69,4 +74,6 @@ public class RegisterActivity extends AppCompatActivity {
         });
         return null;
     }
+
+
 }

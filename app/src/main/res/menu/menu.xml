@@ -14,7 +14,7 @@
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="collapseActionView|always"/>
 
-    <item android:id="@+id/add_box_button"
+    <item android:id="@+id/create_room"
         android:icon="@drawable/ic_baseline_add_box_24"
         android:title="Add Box Button"
         app:actionViewClass="androidx.appcompat.widget.SearchView"

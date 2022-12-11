@@ -12,5 +12,6 @@ public class Room {
     public City city;
     public int size;
     public BedType bedType;
-    public Facility facility;
+    public ArrayList <Facility> facility;
+    public int id;
 }
