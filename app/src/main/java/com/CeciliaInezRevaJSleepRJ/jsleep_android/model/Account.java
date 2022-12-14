@@ -17,6 +17,7 @@ public class Account extends Serializable {
                 ", renter=" + renter +
                 '}';
     }
+
     public Account(int id) {
         super(id);
     }

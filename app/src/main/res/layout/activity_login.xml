@@ -9,6 +9,7 @@
     tools:context=".LoginActivity">
 
     <TextView
+<<<<<<< HEAD
         android:id="@+id/textJSleep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,6 +17,15 @@
         android:text="Login"
         android:textColor="#000000"
         android:textSize="27sp"
+=======
+        android:id="@+id/textSignin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_bold"
+        android:text="Sign In Now"
+        android:textColor="#000000"
+        android:textSize="24sp"
+>>>>>>> 360a270 (Update Proyek Reva - UI)
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,13 +37,20 @@
         android:id="@+id/TextJSleep"
         android:layout_width="221dp"
         android:layout_height="50dp"
+<<<<<<< HEAD
         android:fontFamily="@font/inter_bold"
         android:lineSpacingExtra="20sp"
         android:shadowColor="#ACACAC"
+=======
+        android:fontFamily="@font/inter_semibold"
+        android:lineSpacingExtra="20sp"
+        android:shadowColor="#F1F1F1"
+>>>>>>> 360a270 (Update Proyek Reva - UI)
         android:shadowDx="6"
         android:shadowDy="4"
         android:shadowRadius="10"
         android:text="Welcome to"
+<<<<<<< HEAD
         android:textColor="#FFFFFF"
         android:textSize="36sp"
         android:textStyle="bold"
@@ -43,17 +60,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.111" />
+=======
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.231"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.102" />
+>>>>>>> 360a270 (Update Proyek Reva - UI)
 
     <TextView
         android:id="@+id/textJSleep2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:fontFamily="@font/inter_bold"
         android:shadowColor="#EFEFEF"
+=======
+        android:layout_marginTop="-10dp"
+        android:fontFamily="@font/inter_semibold"
+        android:shadowColor="#F1F1F1"
+>>>>>>> 360a270 (Update Proyek Reva - UI)
         android:shadowDx="6"
         android:shadowDy="4"
         android:shadowRadius="10"
         android:text="JSleep."
+<<<<<<< HEAD
         android:textColor="#7B71E3"
         android:textSize="38sp"
         android:textStyle="bold"
@@ -63,12 +98,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.171" />
+=======
+        android:textColor="#000000"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.176" />
+>>>>>>> 360a270 (Update Proyek Reva - UI)
 
     <EditText
         android:id="@+id/inputEmail"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:backgroundTint="#E7F0FE"
+=======
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#00A2B8DA"
+>>>>>>> 360a270 (Update Proyek Reva - UI)
         android:drawableLeft="@drawable/ic_baseline_person_black"
         android:drawablePadding="22dp"
         android:ems="10"
@@ -89,9 +140,15 @@
         android:id="@+id/inputPassword"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginTop="21dp"
         android:layout_marginBottom="44dp"
         android:backgroundTint="#E7F0FE"
+=======
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="44dp"
+        android:backgroundTint="#00E7F0FE"
+>>>>>>> 360a270 (Update Proyek Reva - UI)
         android:drawableLeft="@drawable/ic_baseline_lock_24"
         android:drawablePadding="22dp"
         android:ems="10"
@@ -111,6 +168,7 @@
 
     <Button
         android:id="@+id/buttonLogin"
+<<<<<<< HEAD
         android:layout_width="322dp"
         android:layout_height="60dp"
         android:backgroundTint="#7B71E3"
@@ -119,6 +177,16 @@
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textSize="18sp"
+=======
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        android:backgroundTint="#3B636E"
+        android:fontFamily="@font/inter_semibold"
+        android:text="Sign In"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="16sp"
+>>>>>>> 360a270 (Update Proyek Reva - UI)
         android:textStyle="bold"
         app:cornerRadius="30dp"
         app:iconTint="#FFFFFF"
@@ -127,12 +195,17 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
         app:layout_constraintVertical_bias="0.736" />
+=======
+        app:layout_constraintVertical_bias="0.662" />
+>>>>>>> 360a270 (Update Proyek Reva - UI)
 
     <TextView
         android:id="@+id/buttonRegisterNow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginEnd="80dp"
         android:layout_marginBottom="70dp"
         android:fontFamily="@font/inter_bold"
@@ -140,14 +213,26 @@
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="#7B71E3"
+=======
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="112dp"
+        android:fontFamily="@font/inter_semibold"
+        android:text="Sign up from here"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="#3B636E"
+>>>>>>> 360a270 (Update Proyek Reva - UI)
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginStart="80dp"
         android:layout_marginBottom="70dp"
         android:fontFamily="@font/inter"
@@ -155,5 +240,16 @@
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+=======
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="100dp"
+        android:fontFamily="@font/inter"
+        android:text="Don't you have an account?"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
+>>>>>>> 360a270 (Update Proyek Reva - UI)
 
 </androidx.constraintlayout.widget.ConstraintLayout>

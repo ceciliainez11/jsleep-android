@@ -20,6 +20,10 @@ import retrofit2.Response;
 public class RegisterActivity extends AppCompatActivity {
     BaseApiService mApiService;
     EditText username, email, password;
+<<<<<<< HEAD
+=======
+    Button register;
+>>>>>>> 360a270 (Update Proyek Reva - UI)
     Context mContext;
 
     @SuppressLint("MissingInflatedId")
@@ -35,7 +39,11 @@ public class RegisterActivity extends AppCompatActivity {
         }
         catch (NullPointerException e){}
 
+<<<<<<< HEAD
         Button register = findViewById(R.id.buttonRegisterPage);
+=======
+        register = findViewById(R.id.buttonRegisterPage);
+>>>>>>> 360a270 (Update Proyek Reva - UI)
         username = findViewById(R.id.nameRegister);
         password = findViewById(R.id.passwordRegister);
         email = findViewById(R.id.emailRegister);
@@ -62,14 +70,14 @@ public class RegisterActivity extends AppCompatActivity {
                     System.out.println(account.toString());
                     Intent move = new Intent(RegisterActivity.this, LoginActivity.class);
                     startActivity(move);
-                    System.out.println("tEST2");
+                    System.out.println("Kembali ke Login dari Register");
                 }
             }
 
             @Override
             public void onFailure(Call<Account> call, Throwable t) {
                 Toast.makeText(mContext, "Account Already Registered", Toast.LENGTH_SHORT).show();
-                System.out.println("tEST3");
+                System.out.println("Tidak berhasil Register");
             }
         });
         return null;

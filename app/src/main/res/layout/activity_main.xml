@@ -5,6 +5,10 @@
     android:id="@+id/constraintMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
+=======
+    android:foregroundTint="#000000"
+>>>>>>> 360a270 (Update Proyek Reva - UI)
     tools:context=".MainActivity">
 
     <Button
@@ -13,7 +17,11 @@
         android:layout_height="45dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
+<<<<<<< HEAD
         android:backgroundTint="#7C97E1"
+=======
+        android:backgroundTint="#85A8B0"
+>>>>>>> 360a270 (Update Proyek Reva - UI)
         android:fontFamily="@font/inter_bold"
         android:text="Go"
         android:textColor="#FFFFFF"
@@ -33,7 +41,11 @@
         android:layout_height="45dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
+<<<<<<< HEAD
         android:backgroundTint="#7C97E1"
+=======
+        android:backgroundTint="#85A8B0"
+>>>>>>> 360a270 (Update Proyek Reva - UI)
         android:fontFamily="@font/inter_bold"
         android:text="Prev"
         android:textColor="#FFFFFF"
@@ -53,7 +65,11 @@
         android:layout_height="45dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
+<<<<<<< HEAD
         android:backgroundTint="#7C97E1"
+=======
+        android:backgroundTint="#85A8B0"
+>>>>>>> 360a270 (Update Proyek Reva - UI)
         android:fontFamily="@font/inter_bold"
         android:text="Next"
         android:textColor="#FFFFFF"
@@ -76,7 +92,11 @@
         android:layout_marginEnd="15dp"
         android:ems="10"
         android:gravity="center"
+<<<<<<< HEAD
         android:hint="1"
+=======
+        android:hint="0"
+>>>>>>> 360a270 (Update Proyek Reva - UI)
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonGo"
@@ -91,6 +111,11 @@
         android:layout_width="392dp"
         android:layout_height="616dp"
         android:layout_marginTop="8dp"
+<<<<<<< HEAD
+=======
+        android:background="#FFFFFF"
+        android:cacheColorHint="#000000"
+>>>>>>> 360a270 (Update Proyek Reva - UI)
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonNext" />

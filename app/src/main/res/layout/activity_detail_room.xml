@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+<<<<<<< HEAD
     android:layout_height="match_parent">
 
         <androidx.cardview.widget.CardView
@@ -11,6 +12,105 @@
             android:layout_height="570dp"
             android:layout_marginTop="20dp"
             app:cardCornerRadius="15dp"
+=======
+    android:layout_height="match_parent"
+    android:background="@drawable/framedetailroom">
+
+        <TextView
+            android:id="@+id/textDetailRoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="18dp"
+            android:fontFamily="@font/inter_semibold"
+            android:gravity="center"
+            android:text="Room Detail"
+            android:textColor="#3B636E"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/detailName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/inter_semibold"
+            android:hint="Cecilia Inez Reva"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textDetailRoom" />
+
+        <TextView
+            android:id="@+id/buttonAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:fontFamily="@font/inter"
+            android:hint="Jalan Cawang Baru No.34"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detailName" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="377dp"
+            android:layout_height="96dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="18dp"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/detailPrice"
+                            android:layout_width="252dp"
+                            android:layout_height="33dp"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/inter_semibold"
+                            android:hint="Rp5.000.000"
+                            android:textColor="#000000"
+                            android:textColorHint="#000000"
+                            android:textSize="25sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewprice" />
+
+                        <TextView
+                            android:id="@+id/textViewprice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="25dp"
+                            android:layout_marginTop="16dp"
+                            android:drawableLeft="@drawable/ic_baseline_attach_money_24"
+                            android:drawablePadding="0dp"
+                            android:fontFamily="@font/inter"
+                            android:text="Price"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView3"
+            android:layout_width="381dp"
+            android:layout_height="351dp"
+            android:layout_marginTop="290dp"
+            app:cardCornerRadius="30dp"
+>>>>>>> 360a270 (Update Proyek Reva - UI)
             app:cardElevation="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -18,6 +118,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+<<<<<<< HEAD
                     android:layout_width="350dp"
                     android:layout_height="570dp">
 
@@ -45,11 +146,16 @@
                             android:textSize="16sp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/roomDetail" />
+=======
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+>>>>>>> 360a270 (Update Proyek Reva - UI)
 
                         <TextView
                             android:id="@+id/textView_bedType"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+<<<<<<< HEAD
                             android:layout_marginStart="27dp"
                             android:layout_marginTop="33dp"
                             android:text="Bed Type"
@@ -67,19 +173,56 @@
                             android:textSize="16sp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/detail_name" />
+=======
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="15dp"
+                            android:drawableLeft="@drawable/ic_baseline_single_bed_24"
+                            android:drawablePadding="22dp"
+                            android:fontFamily="@font/inter"
+                            android:text="Bed Type"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/detailBedType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="50dp"
+                            android:fontFamily="@font/inter"
+                            android:hint="Bed Type"
+                            android:textColor="#000000"
+                            android:textColorHint="#000000"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+>>>>>>> 360a270 (Update Proyek Reva - UI)
 
                         <TextView
                             android:id="@+id/textView_size"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+<<<<<<< HEAD
                             android:layout_marginStart="27dp"
                             android:layout_marginTop="30dp"
                             android:text="Size"
+=======
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="10dp"
+                            android:drawableLeft="@drawable/ic_baseline_size_24"
+                            android:drawablePadding="22dp"
+                            android:fontFamily="@font/inter"
+                            android:text="Size"
+                            android:textColor="#000000"
+>>>>>>> 360a270 (Update Proyek Reva - UI)
                             android:textSize="16sp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/textView_bedType" />
 
                         <TextView
+<<<<<<< HEAD
                             android:id="@+id/detail_size"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -133,11 +276,26 @@
                             android:textSize="16sp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/detail_price" />
+=======
+                            android:id="@+id/detailBedSize"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="50dp"
+                            android:fontFamily="@font/inter"
+                            android:hint="Bed Size"
+                            android:textColor="#000000"
+                            android:textColorHint="#000000"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/detailBedType" />
+>>>>>>> 360a270 (Update Proyek Reva - UI)
 
                         <TextView
                             android:id="@+id/textView9"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+<<<<<<< HEAD
                             android:layout_marginStart="27dp"
                             android:layout_marginTop="14dp"
                             android:text="FACILITY"
@@ -216,10 +374,91 @@
                             android:checked="false"
                             android:enabled="false"
                             android:text="AC"
+=======
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="100dp"
+                            android:fontFamily="@font/inter_semibold"
+                            android:text="FACILITY"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <CheckBox
+                            android:id="@+id/cbWifi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:buttonTint="#3B636E"
+                            android:checked="false"
+                            android:enabled="false"
+                            android:fontFamily="@font/inter"
+                            android:text="Wifi"
+                            android:textColor="#000000"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cbRestaurant" />
+
+                        <CheckBox
+                            android:id="@+id/cbRestaurant"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:buttonTint="#3B636E"
+                            android:checked="false"
+                            android:enabled="false"
+                            android:fontFamily="@font/inter"
+                            android:text="Restaurant"
+                            android:textColor="#000000"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cbBathtub" />
+
+                        <CheckBox
+                            android:id="@+id/cbBalcony"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="65dp"
+                            android:layout_marginEnd="84dp"
+                            android:buttonTint="#3B636E"
+                            android:checked="false"
+                            android:enabled="false"
+                            android:fontFamily="@font/inter"
+                            android:text="Balcony"
+                            android:textColor="#000000"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/detailBedSize" />
+
+                        <CheckBox
+                            android:id="@+id/cbBathtub"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:buttonTint="#3B636E"
+                            android:checked="false"
+                            android:enabled="false"
+                            android:fontFamily="@font/inter"
+                            android:text="Bathtub"
+                            android:textColor="#000000"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cbAC" />
+
+                        <CheckBox
+                            android:id="@+id/cbAC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="15dp"
+                            android:buttonTint="#3B636E"
+                            android:checked="false"
+                            android:enabled="false"
+                            android:fontFamily="@font/inter"
+                            android:text="AC"
+                            android:textColor="#000000"
+>>>>>>> 360a270 (Update Proyek Reva - UI)
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
                         <CheckBox
+<<<<<<< HEAD
                             android:id="@+id/cb_refrigerator"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -230,11 +469,41 @@
                             android:text="Refrigerator"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/detail_address" />
+=======
+                            android:id="@+id/cbRefrigerator"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:layout_marginEnd="57dp"
+                            android:buttonTint="#3B636E"
+                            android:checked="false"
+                            android:enabled="false"
+                            android:fontFamily="@font/inter"
+                            android:text="Refrigerator"
+                            android:textColor="#000000"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cbBalcony" />
+
+                        <CheckBox
+                            android:id="@+id/cbSwimmingPool"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="35dp"
+                            android:buttonTint="#3B636E"
+                            android:checked="false"
+                            android:enabled="false"
+                            android:fontFamily="@font/inter"
+                            android:text="Swimming Pool"
+                            android:textColor="#000000"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cbRefrigerator" />
+>>>>>>> 360a270 (Update Proyek Reva - UI)
 
                         <CheckBox
                             android:id="@+id/cb_fitnessCenter"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+<<<<<<< HEAD
                             android:layout_marginStart="54dp"
                             android:layout_marginTop="1dp"
                             android:layout_marginEnd="27dp"
@@ -258,11 +527,24 @@
                             android:text="Name"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/roomDetail" />
+=======
+                            android:layout_marginTop="1dp"
+                            android:layout_marginEnd="39dp"
+                            android:buttonTint="#3B636E"
+                            android:checked="false"
+                            android:enabled="false"
+                            android:fontFamily="@font/inter"
+                            android:text="Fitness Center"
+                            android:textColor="#000000"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cbSwimmingPool" />
+>>>>>>> 360a270 (Update Proyek Reva - UI)
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
         <Button
+<<<<<<< HEAD
             android:id="@+id/detail_rentButton"
             android:layout_width="90dp"
             android:layout_height="52dp"
@@ -334,6 +616,123 @@
                             android:text="Cancel"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
+=======
+            android:id="@+id/buttonRentRoom"
+            android:layout_width="320dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="630dp"
+            android:backgroundTint="#3B636E"
+            android:fontFamily="@font/inter_semibold"
+            android:text="RENT ROOM"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:cornerRadius="30dp"
+            app:iconTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.662" />
+
+        <TextView
+            android:id="@+id/booksuccess"
+            android:layout_width="262dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="55dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="Book Successfull"
+            android:textAlignment="center"
+            android:textColor="#3B636E"
+            android:textSize="30sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@+id/cardView3"
+            app:layout_constraintStart_toStartOf="@+id/cardView3"
+            app:layout_constraintTop_toBottomOf="@+id/cardView3" />
+
+        <TextView
+            android:id="@+id/bookfailed"
+            android:layout_width="237dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="55dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="Failed Booking"
+            android:textAlignment="center"
+            android:textColor="#3B636E"
+            android:textSize="30sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@+id/cardView3"
+            app:layout_constraintStart_toStartOf="@+id/cardView3"
+            app:layout_constraintTop_toBottomOf="@+id/cardView3" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/afterRent"
+            android:layout_width="414dp"
+            android:layout_height="106dp"
+            android:layout_marginTop="5dp"
+            android:visibility="visible"
+            app:cardBackgroundColor="#E9E9EE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView3">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                        <Button
+                            android:id="@+id/buttonPay"
+                            android:layout_width="120dp"
+                            android:layout_height="55dp"
+                            android:layout_marginTop="-30dp"
+                            android:layout_marginEnd="200dp"
+                            android:backgroundTint="#3B636E"
+                            android:fontFamily="@font/inter_semibold"
+                            android:text="PAY"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:visibility="visible"
+                            app:cornerRadius="30dp"
+                            app:iconTint="#FFFFFF"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.494"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.662" />
+
+                        <Button
+                            android:id="@+id/buttonCancelPay"
+                            android:layout_width="120dp"
+                            android:layout_height="55dp"
+                            android:layout_marginStart="200dp"
+                            android:layout_marginTop="-30dp"
+                            android:backgroundTint="#FFFFFF"
+                            android:fontFamily="@font/inter_semibold"
+                            android:text="BACK"
+                            android:textColor="#3B636E"
+                            android:textColorHint="#3B636E"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:visibility="visible"
+                            app:cornerRadius="30dp"
+                            app:iconTint="#FFFFFF"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.494"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.662" />
+>>>>>>> 360a270 (Update Proyek Reva - UI)
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
