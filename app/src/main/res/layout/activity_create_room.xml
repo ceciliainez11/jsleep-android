@@ -12,43 +12,40 @@
         android:background="@drawable/framecreateroom"
         tools:context=".AboutMeActivity">
 
+        <TextView
+            android:id="@+id/CreateRoomText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:gravity="center"
+            android:text="Create Room"
+            android:textColor="#000000"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <LinearLayout
             android:id="@+id/CreateRoomLayout"
-            android:layout_width="432dp"
-            android:layout_height="389dp"
-            android:layout_marginTop="30dp"
+            android:layout_width="408dp"
+            android:layout_height="474dp"
+            android:layout_marginTop="100dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
-                android:id="@+id/CreateRoom"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center">
-
-                <TextView
-                    android:id="@+id/CreateRoomText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Create Room"
-                    android:textColor="#000000"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
                 android:id="@+id/CreateRoomNameInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="150dp"
                 android:gravity="center"
                 tools:layout_editor_absoluteX="0dp">
 
                 <EditText
-                    android:id="@+id/createRoom_name"
+                    android:id="@+id/createroomName"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#0057687A"
@@ -66,13 +63,13 @@
                 android:id="@+id/CreateRoomPriceInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="35dp"
+                android:layout_marginTop="45dp"
                 android:gravity="center"
                 app:layout_constraintTop_toBottomOf="@+id/RegisterRenterNameInputLayout"
                 tools:layout_editor_absoluteX="0dp">
 
                 <EditText
-                    android:id="@+id/createRoom_price"
+                    android:id="@+id/createroomPrice"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#00FFFFFF"
@@ -90,13 +87,13 @@
                 android:id="@+id/CreateRoomAddressInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="35dp"
+                android:layout_marginTop="45dp"
                 android:gravity="center"
                 app:layout_constraintTop_toBottomOf="@+id/RegisterRenterAddressInputLayout"
                 tools:layout_editor_absoluteX="0dp">
 
                 <EditText
-                    android:id="@+id/createRoom_address"
+                    android:id="@+id/createroomAddress"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#00E8E8E8"
@@ -113,14 +110,14 @@
             <LinearLayout
                 android:id="@+id/CreateRoomSizeInputLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="35dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="40dp"
                 android:gravity="center"
                 app:layout_constraintTop_toBottomOf="@+id/RegisterRenterNameInputLayout"
                 tools:layout_editor_absoluteX="0dp">
 
                 <EditText
-                    android:id="@+id/createRoom_size"
+                    android:id="@+id/createroomSize"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#0057687A"
@@ -149,8 +146,8 @@
             <LinearLayout
                 android:id="@+id/CreateFacility"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"
                 android:gravity="center">
 
                 <TextView
@@ -160,7 +157,7 @@
                     android:gravity="center"
                     android:text="Facility"
                     android:textColor="#000000"
-                    android:textSize="22sp"
+                    android:textSize="25sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -168,7 +165,7 @@
                 android:id="@+id/CreateFacilityCheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="10dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -352,14 +349,14 @@
             tools:layout_editor_absoluteX="0dp">
 
             <Button
-                android:id="@+id/CreateButton"
+                android:id="@+id/buttonCreate"
                 android:layout_width="115dp"
                 android:layout_height="59dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginBottom="30dp"
-                android:backgroundTint="#7B71E3"
+                android:backgroundTint="#85A8B0"
                 android:fontFamily="@font/inter_bold"
                 android:text="Create"
                 android:textColor="#FFFFFF"
@@ -371,14 +368,14 @@
                 app:iconTint="#FFFFFF" />
 
             <Button
-                android:id="@+id/CancelButton"
+                android:id="@+id/buttonCancel"
                 android:layout_width="115dp"
                 android:layout_height="59dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="30dp"
-                android:backgroundTint="#7B71E3"
+                android:backgroundTint="#85A8B0"
                 android:fontFamily="@font/inter_bold"
                 android:text="Cancel"
                 android:textColor="#FFFFFF"

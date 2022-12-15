@@ -18,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -49,25 +50,43 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mApiService = UtilsApi.getApiService();
         mContext = this;
-        list = (ListView) findViewById(R.id.ListViewMain);
+        list = findViewById(R.id.ListViewMain);
+        inputList = findViewById(R.id.inputList);
+        buttonNext = findViewById(R.id.buttonNext);
+        buttonPrev = findViewById(R.id.buttonPrev);
+        buttonGo = findViewById(R.id.buttonGo);
 
         getAllRooms(0,5);
 
-        buttonNext = findViewById(R.id.buttonNext);
-        buttonNext.setOnClickListener(i-> {
-            page++;
-            getAllRooms(0,5);
+        buttonNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                page++;
+                System.out.println(page);
+                getAllRooms(page,5);
+            }
         });
 
-        buttonPrev = findViewById(R.id.buttonPrev);
-        buttonPrev.setOnClickListener(i -> {
-            page = page == 0? 0 : page - 1;
-            getAllRooms(0,5);
+        buttonPrev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(page >= 1){
+                    page--;
+                    System.out.println(page);
+                    getAllRooms(page, 5);
+                }
+            }
         });
 
-        buttonGo = findViewById(R.id.buttonGo);
-        buttonGo.setOnClickListener(i -> {
-            getAllRooms(0,5);
+        buttonGo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(Integer.parseInt(inputList.getText().toString()) >= 0){
+                    page = Integer.parseInt(inputList.getText().toString());
+                    System.out.println(page);
+                    getAllRooms(page, 5);
+                }
+            }
         });
 
 

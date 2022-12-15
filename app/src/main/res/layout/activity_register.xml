@@ -12,21 +12,37 @@
             android:id="@+id/TextRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="44dp"
-            android:layout_marginTop="80dp"
-            android:fontFamily="@font/inter_bold"
-            android:text="Create an Account"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="Create"
             android:textColor="#000000"
-            android:textSize="30sp"
+            android:textSize="27sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="-10dp"
+            android:fontFamily="@font/inter"
+            android:text="New Account"
+            android:textColor="#000000"
+            android:textSize="27sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TextRegister" />
 
         <EditText
             android:id="@+id/nameRegister"
             android:layout_width="280dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="#E7F0FE"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="-1dp"
+            android:backgroundTint="#00E7F0FE"
             android:drawableLeft="@drawable/ic_baseline_person_black"
             android:drawablePadding="22dp"
             android:ems="10"
@@ -40,14 +56,14 @@
             app:layout_constraintHorizontal_bias="0.458"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.328"
             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
         <EditText
             android:id="@+id/emailRegister"
             android:layout_width="280dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="#E7F0FE"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="#00E7F0FE"
             android:drawableLeft="@drawable/ic_baseline_email_24"
             android:drawablePadding="22dp"
             android:ems="10"
@@ -61,14 +77,15 @@
             app:layout_constraintHorizontal_bias="0.458"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.475"
+            app:layout_constraintVertical_bias="0.635"
             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
         <EditText
             android:id="@+id/passwordRegister"
             android:layout_width="280dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="#E7F0FE"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#00E7F0FE"
             android:drawableLeft="@drawable/ic_baseline_lock_24"
             android:drawablePadding="22dp"
             android:ems="10"
@@ -82,16 +99,16 @@
             app:layout_constraintHorizontal_bias="0.458"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.623"
+            app:layout_constraintVertical_bias="0.768"
             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
         <Button
             android:id="@+id/buttonRegisterPage"
-            android:layout_width="322dp"
-            android:layout_height="60dp"
-            android:backgroundTint="#7B71E3"
-            android:fontFamily="@font/inter_bold"
-            android:text="REGISTER"
+            android:layout_width="320dp"
+            android:layout_height="55dp"
+            android:backgroundTint="#3B636E"
+            android:fontFamily="@font/inter_semibold"
+            android:text="SIGN UP"
             android:textColor="#FFFFFF"
             android:textColorHint="#FFFFFF"
             android:textSize="18sp"
@@ -103,5 +120,5 @@
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.871" />
+            app:layout_constraintVertical_bias="0.936" />
 </androidx.constraintlayout.widget.ConstraintLayout>

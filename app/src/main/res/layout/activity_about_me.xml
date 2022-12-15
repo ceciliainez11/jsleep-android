@@ -10,86 +10,96 @@
     tools:context=".AboutMeActivity">
 
     <TextView
-        android:id="@+id/about_name"
-        android:layout_width="wrap_content"
+        android:id="@+id/aboutmeName"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="152dp"
         android:layout_marginEnd="100dp"
+        android:fontFamily="@font/inter_semibold"
         android:text="Cecilia Inez Reva"
-        android:textColor="#000000"
-        android:textSize="30sp"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="23sp"
         android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/about_balance"
-        android:layout_width="108dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
-        android:text="Rp10.000"
-        android:textAlignment="textEnd"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/about_email" />
-
-    <TextView
-        android:id="@+id/about_email"
-        android:layout_width="wrap_content"
+        android:id="@+id/aboutmeEmail"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="125dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="125dp"
+        android:fontFamily="@font/inter"
         android:text="ceciliainezreva@gmail.com"
-        android:textColor="#000000"
-        android:textSize="16sp"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/about_name" />
-
-    <EditText
-        android:id="@+id/nominal"
-        android:layout_width="166dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="130dp"
-        android:backgroundTint="#00FFFFFF"
-        android:ems="10"
-        android:hint="Nominal Top Up"
-        android:inputType="textPersonName"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/aboutmeName" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="60dp"
+        android:id="@+id/Wallet"
+        android:layout_width="100dp"
         android:layout_height="27dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="40dp"
+        android:drawableLeft="@drawable/ic_baseline_account_balance_wallet_24"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/inter"
         android:text="Wallet"
         android:textColor="#000000"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/about_email" />
+        app:layout_constraintTop_toBottomOf="@+id/aboutmeEmail" />
+
+    <TextView
+        android:id="@+id/aboutmeBalance"
+        android:layout_width="200dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="70dp"
+        android:fontFamily="@font/inter"
+        android:text="Rp2.000.000"
+        android:textAlignment="textEnd"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutmeEmail" />
+
+    <EditText
+        android:id="@+id/inputNominal"
+        android:layout_width="173dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="53dp"
+        android:backgroundTint="#00FFFFFF"
+        android:ems="10"
+        android:fontFamily="@font/inter"
+        android:hint="Nominal Top Up"
+        android:inputType="textPersonName"
+        android:textAlignment="textStart"
+        android:textSize="16sp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutmeBalance"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonTopUp"
         android:layout_width="120dp"
         android:layout_height="55dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="47dp"
         android:layout_marginEnd="50dp"
-        android:backgroundTint="#7C97E1"
+        android:backgroundTint="#85A8B0"
         android:fontFamily="@font/inter_bold"
         android:text="Top Up"
         android:textColor="#FFFFFF"
@@ -100,46 +110,45 @@
         app:cornerRadius="30dp"
         app:iconTint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/about_balance" />
+        app:layout_constraintTop_toBottomOf="@+id/aboutmeBalance" />
 
     <Button
-        android:id="@+id/aboutme_registerRenter"
-        android:layout_width="322dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="-200dp"
-        android:backgroundTint="#7C96E0"
-        android:fontFamily="@font/inter_bold"
+        android:id="@+id/buttonRegisterRenter"
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="550dp"
+        android:backgroundTint="#3B636E"
+        android:fontFamily="@font/inter_semibold"
         android:text="REGISTER RENTER"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textStyle="bold"
-        android:visibility="visible"
         app:cornerRadius="30dp"
         app:iconTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.718" />
+        app:layout_constraintVertical_bias="0.662" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/registerCardView"
-        android:layout_width="433dp"
-        android:layout_height="553dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="417dp"
+        android:layout_height="467dp"
+        android:layout_marginTop="28dp"
         android:visibility="invisible"
         app:cardBackgroundColor="#EAEBFA"
         app:cardCornerRadius="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/about_email">
+        app:layout_constraintTop_toBottomOf="@+id/aboutmeBalance">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#F6E8FB"
+            android:layout_width="423dp"
+            android:layout_height="486dp"
+            android:background="#FFFFFF"
             android:visibility="visible">
 
             <TextView
@@ -159,7 +168,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/aboutme_name2"
+                android:id="@+id/am_input_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -174,7 +183,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/aboutme_address"
+                android:id="@+id/am_input_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -185,10 +194,10 @@
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/aboutme_name2" />
+                app:layout_constraintTop_toBottomOf="@+id/am_input_name" />
 
             <EditText
-                android:id="@+id/aboutme_phoneNumber"
+                android:id="@+id/am_input_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -199,14 +208,14 @@
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/aboutme_address" />
+                app:layout_constraintTop_toBottomOf="@+id/am_input_address" />
 
             <Button
-                android:id="@+id/aboutme_register"
+                android:id="@+id/ambuttonRegister"
                 android:layout_width="139dp"
                 android:layout_height="59dp"
-                android:layout_marginBottom="-100dp"
-                android:backgroundTint="#7B71E3"
+                android:layout_marginBottom="-150dp"
+                android:backgroundTint="#3B636E"
                 android:fontFamily="@font/inter_bold"
                 android:text="REGISTER"
                 android:textColor="#FFFFFF"
@@ -224,11 +233,11 @@
                 app:layout_constraintVertical_bias="0.589" />
 
             <Button
-                android:id="@+id/aboutme_cancel"
+                android:id="@+id/ambuttonCancel"
                 android:layout_width="139dp"
                 android:layout_height="59dp"
-                android:layout_marginBottom="-100dp"
-                android:backgroundTint="#7B71E3"
+                android:layout_marginBottom="-150dp"
+                android:backgroundTint="#3B636E"
                 android:fontFamily="@font/inter_bold"
                 android:text="CANCEL"
                 android:textColor="#FFFFFF"
@@ -250,12 +259,12 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/dataCardView"
-        android:layout_width="380dp"
-        android:layout_height="272dp"
-        android:layout_marginBottom="180dp"
-        android:visibility="invisible"
-        app:cardBackgroundColor="#E7DEFD"
-        app:cardCornerRadius="30dp"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="90dp"
+        android:visibility="visible"
+        app:cardBackgroundColor="#A4B5B8"
+        app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -269,7 +278,7 @@
                 android:layout_width="233dp"
                 android:layout_height="28dp"
                 android:layout_marginStart="77dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginEnd="60dp"
                 android:text="Renter Information"
                 android:textAlignment="center"
@@ -282,36 +291,36 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/aboutme_textviewStore"
+                android:id="@+id/out_name"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="10dp"
                 android:text="Netlab"
                 android:textColor="#000000"
                 android:textSize="25sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/aboutme_textviewPlace"
+                app:layout_constraintBottom_toTopOf="@+id/out_address"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/aboutme_textviewPlace"
+                android:id="@+id/out_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="10dp"
                 android:text="Gedung DTE Lantai 2"
                 android:textColor="#000000"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/aboutme_textviewNumber"
+                app:layout_constraintBottom_toTopOf="@+id/out_phone"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/aboutme_textviewNumber"
+                android:id="@+id/out_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
-                android:layout_marginBottom="55dp"
+                android:layout_marginBottom="30dp"
                 android:text="081234567890"
                 android:textColor="#000000"
                 android:textSize="17sp"
@@ -320,5 +329,17 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="130dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/profilepicture" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

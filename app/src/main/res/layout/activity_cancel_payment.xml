@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/framecancel"
+    android:background="@drawable/framefailed"
     tools:context=".CancelPaymentActivity">
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="60dp"
         android:text="Return Money"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toBottomOf="@+id/title_date3" />
 
     <TextView
-        android:id="@+id/cancel_price"
+        android:id="@+id/cancelmoney"
         android:layout_width="362dp"
         android:layout_height="58dp"
         android:layout_weight="1"
@@ -40,7 +40,7 @@
         android:id="@+id/title_date3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="316dp"
+        android:layout_marginTop="450dp"
         android:text="Payment Canceled"
         android:textColor="#000000"
         android:textSize="30sp"

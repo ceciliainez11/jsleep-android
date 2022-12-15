@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
 
         buttonRegisterNow.setOnClickListener(i ->
         {
-            Toast.makeText(this, "Register Success", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Go to Register Page", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
         });
 
