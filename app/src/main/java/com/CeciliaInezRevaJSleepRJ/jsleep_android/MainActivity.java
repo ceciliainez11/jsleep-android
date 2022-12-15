@@ -33,10 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     BaseApiService mApiService;
     Context mContext;
-<<<<<<< HEAD
-//    static List<Room> allRooms = new ArrayList<Room>();
-=======
->>>>>>> 360a270 (Update Proyek Reva - UI)
+    //    static List<Room> allRooms = new ArrayList<Room>();
     public static List<Room> rooms;
     List<Room> roomActivity;
     public static int selectedPos;
@@ -52,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mApiService = UtilsApi.getApiService();
         mContext = this;
-<<<<<<< HEAD
         list = (ListView) findViewById(R.id.ListViewMain);
 
         getAllRooms(0,5);
@@ -86,85 +82,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-=======
-        list = findViewById(R.id.ListViewMain);
-        inputList = findViewById(R.id.inputList);
-        buttonNext = findViewById(R.id.buttonNext);
-        buttonPrev = findViewById(R.id.buttonPrev);
-        buttonGo = findViewById(R.id.buttonGo);
-
-        getAllRooms(0,5);
-
-        buttonNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                page++;
-                System.out.println(page);
-                getAllRooms(page,5);
-            }
-        });
-
-        buttonPrev.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(page >= 1){
-                    page--;
-                    System.out.println(page);
-                    getAllRooms(page,5);
-                }
-            }
-        });
-
-        buttonGo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(Integer.parseInt(inputList.getText().toString()) >= 0){
-                    page = Integer.parseInt(inputList.getText().toString());
-                    System.out.println(page);
-                    getAllRooms(page, 5);
-                }
-            }
-        });
-
-
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                roomIndex = position;
-                Intent move = new Intent(MainActivity.this, DetailRoomActivity.class);
-                startActivity(move);
-            }
-        });
-
-    }
-
-    protected List<Room> getAllRooms(int page, int pageSize){
-        mApiService.getAllRoom(page, pageSize).enqueue(new Callback<List<Room>>() {
-            @Override
-            public void onResponse(Call<List<Room>> call, Response<List<Room>> response) {
-                if(response.isSuccessful()){
-                    System.out.println("Success");
-                    ArrayList<String> temporary = new ArrayList<>();
-                    rooms = response.body();
-                    for(Room i : rooms){
-                        temporary.add(i.name);
-                    }
-                    ArrayAdapter<String> itemAdapter = new ArrayAdapter<>(mContext, android.R.layout.simple_list_item_1,temporary);
-                    list.setAdapter(itemAdapter);
-                    Toast.makeText(mContext, "getRoomList successfull", Toast.LENGTH_SHORT).show();
-                    System.out.println(rooms);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Room>> call, Throwable t) {
-                System.out.println("Failed");
-                System.out.println(t.toString());
-                Toast.makeText(mContext, "Failed to getRoomList", Toast.LENGTH_SHORT).show();
-            }
-        });
-        return null;
->>>>>>> 360a270 (Update Proyek Reva - UI)
     }
 
 //    protected ArrayList<Room> getAllRooms() {
@@ -253,7 +170,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater(); //menampilkan menu
+        MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
 
         if (MainActivity.loginacc.renter == null) {

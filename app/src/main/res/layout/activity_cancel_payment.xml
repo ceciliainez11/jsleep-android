@@ -4,37 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
     android:background="@drawable/framecancel"
-=======
-    android:background="@drawable/framefailed"
->>>>>>> 360a270 (Update Proyek Reva - UI)
     tools:context=".CancelPaymentActivity">
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
         android:layout_marginTop="8dp"
         android:text="Return Money"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-=======
-        android:layout_marginTop="50dp"
-        android:fontFamily="@font/inter"
-        android:text="Return Money"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
->>>>>>> 360a270 (Update Proyek Reva - UI)
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_date3" />
 
     <TextView
-<<<<<<< HEAD
         android:id="@+id/cancel_price"
         android:layout_width="362dp"
         android:layout_height="58dp"
@@ -46,21 +31,6 @@
         android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-=======
-        android:id="@+id/cancelmoney"
-        android:layout_width="362dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="4dp"
-        android:layout_weight="1"
-        android:text="Rp500.000"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
->>>>>>> 360a270 (Update Proyek Reva - UI)
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14">
 
@@ -70,23 +40,12 @@
         android:id="@+id/title_date3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
         android:layout_marginTop="316dp"
         android:text="Payment Canceled"
         android:textColor="#000000"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-=======
-        android:layout_marginTop="470dp"
-        android:fontFamily="@font/inter_bold"
-        android:text="Your Booking has been Cancelled"
-        android:textColor="#000000"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
->>>>>>> 360a270 (Update Proyek Reva - UI)
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

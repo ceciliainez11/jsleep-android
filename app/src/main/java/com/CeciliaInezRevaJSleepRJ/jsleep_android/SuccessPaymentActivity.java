@@ -1,20 +1,14 @@
 package com.CeciliaInezRevaJSleepRJ.jsleep_android;
 
 import androidx.appcompat.app.AppCompatActivity;
-<<<<<<< HEAD
 
-=======
->>>>>>> 360a270 (Update Proyek Reva - UI)
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
-<<<<<<< HEAD
 
-=======
->>>>>>> 360a270 (Update Proyek Reva - UI)
 import java.text.NumberFormat;
 import java.util.Locale;
 
@@ -27,17 +21,11 @@ public class SuccessPaymentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_success_payment);
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 360a270 (Update Proyek Reva - UI)
         try
         {
             this.getSupportActionBar().hide();
         }
         catch (NullPointerException e){}
-<<<<<<< HEAD
         paidAmount = findViewById(R.id.success_price);
         mContext = this;
 
@@ -49,24 +37,6 @@ public class SuccessPaymentActivity extends AppCompatActivity {
                     public void run() {
                         Intent move = new Intent(SuccessPaymentActivity.this, MainActivity.class);
                         startActivity(move);
-=======
-
-
-        paidAmount = findViewById(R.id.success_price);
-        mContext = this;
-        paidAmount.setText(BookingActivity.priceCurrency);
-
-
-        Toast.makeText(mContext, "Back to Menu. Wait for 5 Sec", Toast.LENGTH_LONG).show();
-        new android.os.Handler().postDelayed(
-                new Runnable() {
-
-
-                    public void run() {
-                        Intent move = new Intent(SuccessPaymentActivity.this, MainActivity.class);
-                        startActivity(move);
-
->>>>>>> 360a270 (Update Proyek Reva - UI)
                     }
                 }, 5000);
     }

@@ -20,11 +20,6 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity {
     BaseApiService mApiService;
     EditText email, password;
-<<<<<<< HEAD
-=======
-    Button buttonLogin;
-    TextView buttonRegisterNow;
->>>>>>> 360a270 (Update Proyek Reva - UI)
     Context mContext;
 
     @SuppressLint("MissingInflatedId")
@@ -39,21 +34,12 @@ public class LoginActivity extends AppCompatActivity {
             this.getSupportActionBar().hide();
         }
         catch (NullPointerException e){}
-<<<<<<< HEAD
 
         email = findViewById(R.id.inputEmail);
         password = findViewById(R.id.inputPassword);
         Button buttonLogin = findViewById(R.id.buttonLogin);
         TextView buttonRegisterNow = findViewById(R.id.buttonRegisterNow);
 
-=======
-
-        email = findViewById(R.id.inputEmail);
-        password = findViewById(R.id.inputPassword);
-        buttonLogin = findViewById(R.id.buttonLogin);
-        buttonRegisterNow = findViewById(R.id.buttonRegisterNow);
-
->>>>>>> 360a270 (Update Proyek Reva - UI)
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,11 +49,7 @@ public class LoginActivity extends AppCompatActivity {
 
         buttonRegisterNow.setOnClickListener(i ->
         {
-<<<<<<< HEAD
             Toast.makeText(this, "Register Success", Toast.LENGTH_SHORT).show();
-=======
-            Toast.makeText(this, "Go to Register Page", Toast.LENGTH_SHORT).show();
->>>>>>> 360a270 (Update Proyek Reva - UI)
             startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
         });
 

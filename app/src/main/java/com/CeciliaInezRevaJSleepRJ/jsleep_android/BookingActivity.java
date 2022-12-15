@@ -1,16 +1,7 @@
 package com.CeciliaInezRevaJSleepRJ.jsleep_android;
 
-<<<<<<< HEAD
 import androidx.appcompat.app.AppCompatActivity;
 
-=======
-import com.CeciliaInezRevaJSleepRJ.jsleep_android.model.Account;
-import com.CeciliaInezRevaJSleepRJ.jsleep_android.model.Invoice;
-import com.CeciliaInezRevaJSleepRJ.jsleep_android.model.Payment;
-import com.CeciliaInezRevaJSleepRJ.jsleep_android.request.BaseApiService;
-import com.CeciliaInezRevaJSleepRJ.jsleep_android.request.UtilsApi;
-import androidx.appcompat.app.AppCompatActivity;
->>>>>>> 360a270 (Update Proyek Reva - UI)
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import java.text.NumberFormat;
@@ -20,10 +11,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
-<<<<<<< HEAD
 
-=======
->>>>>>> 360a270 (Update Proyek Reva - UI)
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Context;
@@ -33,15 +21,12 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
-<<<<<<< HEAD
 
 import com.CeciliaInezRevaJSleepRJ.jsleep_android.model.Invoice;
 import com.CeciliaInezRevaJSleepRJ.jsleep_android.model.Payment;
 import com.CeciliaInezRevaJSleepRJ.jsleep_android.request.BaseApiService;
 import com.CeciliaInezRevaJSleepRJ.jsleep_android.request.UtilsApi;
 
-=======
->>>>>>> 360a270 (Update Proyek Reva - UI)
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -51,16 +36,8 @@ public class BookingActivity extends AppCompatActivity {
     BaseApiService mApiService;
     Context mContext;
 
-<<<<<<< HEAD
     private DatePickerDialog datePickerDialog;
     private Button dateButtonFrom, dateButtonTo, saveBookButton, payButton, cancelButton;
-=======
-    protected TextView priceText;
-    TextView book_balance;
-    protected static String priceCurrency;
-    private DatePickerDialog datePickerDialog;
-    private Button book_dateFrom, book_dateTo, book_buttonBook, book_buttonPay, book_buttonCancel;
->>>>>>> 360a270 (Update Proyek Reva - UI)
     private int index = 0;
     protected static String from, to, from2, to2;
     protected static String totalPay;
@@ -68,12 +45,9 @@ public class BookingActivity extends AppCompatActivity {
     double accountBalance;
     long numDays = 0;
 
-<<<<<<< HEAD
     protected TextView priceText;
     protected static String priceCurrency;
 
-=======
->>>>>>> 360a270 (Update Proyek Reva - UI)
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +62,6 @@ public class BookingActivity extends AppCompatActivity {
         }
         catch (NullPointerException e){}
 
-<<<<<<< HEAD
         dateButtonFrom = findViewById(R.id.booking_datePickerTo);
         dateButtonTo = findViewById(R.id.booking_datePickerFrom);
         saveBookButton = findViewById(R.id.booking_saveButton);
@@ -120,86 +93,30 @@ public class BookingActivity extends AppCompatActivity {
             System.out.println(simpleCalcDays(DetailRoomActivity.currentPayment.from, DetailRoomActivity.currentPayment.to));
             //Update Price
             priceText = findViewById(R.id.booking_price);
-=======
-        book_dateFrom = findViewById(R.id.book_dateFrom);
-        book_dateTo = findViewById(R.id.book_dateTo);
-        book_buttonBook = findViewById(R.id.book_buttonBook);
-        book_buttonPay = findViewById(R.id.book_buttonPay);
-        book_buttonCancel = findViewById(R.id.book_buttonCancel);
-        book_balance = findViewById(R.id.book_balance);
-
-        book_buttonBook.setVisibility(Button.VISIBLE);
-        book_buttonPay.setVisibility(Button.GONE);
-        book_buttonCancel.setVisibility(Button.GONE);
-
-        //Update Saldo
-        accountBalance = MainActivity.loginacc.balance;
-        System.out.println("Saldo : "+MainActivity.loginacc.balance);
-        System.out.println(accountBalance);
-
-        if((DetailRoomActivity.currentPayment != null) &&
-                (DetailRoomActivity.currentPayment.status == Invoice.PaymentStatus.WAITING)){
-            book_dateFrom.setText(simpleDateFormat(DetailRoomActivity.currentPayment.from));
-            book_dateTo.setText(simpleDateFormat(DetailRoomActivity.currentPayment.to));
-
-            book_dateTo.setEnabled(false);
-            book_dateFrom.setEnabled(false);
-
-            //Balance
-            String balanceCurrency = NumberFormat.getCurrencyInstance(new Locale("in", "ID")).format(accountBalance);
-            book_balance.setText(balanceCurrency);
-            System.out.println(roomPrice);
-            System.out.println(simpleCalcDays(DetailRoomActivity.currentPayment.from, DetailRoomActivity.currentPayment.to));
-
-
-            //Price
-            priceText = findViewById(R.id.book_price);
->>>>>>> 360a270 (Update Proyek Reva - UI)
             priceCurrency = NumberFormat.getCurrencyInstance(new Locale("in", "ID")).format(roomPrice * simpleCalcDays(DetailRoomActivity.currentPayment.from, DetailRoomActivity.currentPayment.to));
             totalPay = priceCurrency;
             System.out.println(priceCurrency);
             priceText.setText(priceCurrency);
 
-<<<<<<< HEAD
             saveBookButton.setVisibility(Button.GONE);
             payButton.setVisibility(Button.VISIBLE);
             cancelButton.setVisibility(Button.VISIBLE);
 
             payButton.setOnClickListener(new View.OnClickListener() {
-=======
-
-            book_buttonPay.setVisibility(Button.VISIBLE);
-            book_buttonCancel.setVisibility(Button.VISIBLE);
-            book_buttonBook.setVisibility(Button.GONE);
-
-
-            book_buttonPay.setOnClickListener(new View.OnClickListener() {
->>>>>>> 360a270 (Update Proyek Reva - UI)
                 @Override
                 public void onClick(View view) {
                     requestAcceptPayment(DetailRoomActivity.currentPayment.id);
                 }
             });
-<<<<<<< HEAD
             cancelButton.setOnClickListener(new View.OnClickListener() {
-=======
-
-
-            book_buttonCancel.setOnClickListener(new View.OnClickListener() {
->>>>>>> 360a270 (Update Proyek Reva - UI)
                 @Override
                 public void onClick(View view) {
                     requestCancelPayment(DetailRoomActivity.currentPayment.id);
                 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 360a270 (Update Proyek Reva - UI)
             });
         }
 
         else{
-<<<<<<< HEAD
             dateButtonTo.setEnabled(true);
             dateButtonFrom.setEnabled(true);
             //Default Value dari dateButton
@@ -219,30 +136,10 @@ public class BookingActivity extends AppCompatActivity {
                 datePickerDialog.show();
             });
             dateButtonTo.setOnClickListener(view -> {
-=======
-            book_dateTo.setEnabled(true);
-            book_dateFrom.setEnabled(true);
-
-            initDatePicker();
-            from = getTodaysDate(0);
-            to = getTodaysDate(1);
-            from2 = from;
-            to2 = to;
-
-            book_dateFrom.setText(from);
-            book_dateTo.setText(to);
-
-            book_dateFrom.setOnClickListener(view -> {
-                index = 1;
-                datePickerDialog.show();
-            });
-            book_dateTo.setOnClickListener(view -> {
->>>>>>> 360a270 (Update Proyek Reva - UI)
                 index = 2;
                 datePickerDialog.show();
             });
 
-<<<<<<< HEAD
             saveBookButton.setOnClickListener(view -> {
                 numDays = calcDays(from, to);
 
@@ -254,11 +151,6 @@ public class BookingActivity extends AppCompatActivity {
 //                System.out.println(formatDate(to));
 
 
-=======
-            book_buttonBook.setOnClickListener(view -> {
-                numDays = calcDays(from, to);
-
->>>>>>> 360a270 (Update Proyek Reva - UI)
                 requestBooking(MainActivity.loginacc.id,
                         MainActivity.loginacc.renter.id,
                         DetailRoomActivity.sessionRoom.id,
@@ -268,41 +160,10 @@ public class BookingActivity extends AppCompatActivity {
 
             updatePrice();
             String balanceCurrency = NumberFormat.getCurrencyInstance(new Locale("in", "ID")).format(accountBalance);
-<<<<<<< HEAD
             balanceText.setText(balanceCurrency);
         }
 
 
-=======
-            book_balance.setText(balanceCurrency);
-        }
-    }
-
-    protected Account requestAccount(int id){
-        mApiService.getAccount(id).enqueue(new Callback<Account>() {
-            @Override
-            public void onResponse(Call<Account> call, Response<Account> response) {
-                if(response.isSuccessful()){
-                    Account account;
-                    MainActivity.loginacc = response.body();
-                    System.out.println("BERHASILL");
-                    System.out.println(MainActivity.loginacc.toString());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Account> call, Throwable t){
-                System.out.println("gagal");
-                System.out.println(t.toString());
-                Toast.makeText(mContext, "no Account id=0", Toast.LENGTH_SHORT).show();
-            }
-        });
-        return null;
-    }
-
-    private String makeDateString(int day, int month, int year){
-        return getMonthFormat(month) + " " + day + " " + year;
->>>>>>> 360a270 (Update Proyek Reva - UI)
     }
 
     private String getTodaysDate(int offset) {
@@ -315,7 +176,6 @@ public class BookingActivity extends AppCompatActivity {
         return makeDateString(day, month, year);
     }
 
-<<<<<<< HEAD
     private void initDatePicker() {
         DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -354,8 +214,6 @@ public class BookingActivity extends AppCompatActivity {
         return getMonthFormat(month) + " " + day + " " + year;
     }
 
-=======
->>>>>>> 360a270 (Update Proyek Reva - UI)
     private String getMonthFormat(int month) {
         switch (month){
             case 1:
@@ -386,45 +244,6 @@ public class BookingActivity extends AppCompatActivity {
         return null;
     }
 
-<<<<<<< HEAD
-=======
-    private void initDatePicker() {
-        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                month = month + 1;
-                String date = makeDateString(day, month, year);
-                if(index == 1){
-                    from = date;
-                    book_dateFrom.setText(from);
-                    updatePrice();
-                }
-
-                else if(index == 2){
-                    String tempTo = to;
-                    to = date;
-                    if(calcDays(from, to) >= 1 ){
-                        book_dateTo.setText(to);
-                        updatePrice();
-                    }else{
-                        to = tempTo;
-                        Toast.makeText(mContext, "Min. 1 day of stay", Toast.LENGTH_LONG).show();
-                    }
-                }
-            }
-        };
-
-        Calendar cal = Calendar.getInstance();
-        int year = cal.get(Calendar.YEAR);
-        int month = cal.get(Calendar.MONTH);
-        int day = cal.get(Calendar.DAY_OF_MONTH);
-        int style = AlertDialog.THEME_HOLO_LIGHT;
-        datePickerDialog = new DatePickerDialog(this, style, dateSetListener, year, month, day);
-        datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
-        datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis() + 30L *24*60*60*1000);
-    }
-
->>>>>>> 360a270 (Update Proyek Reva - UI)
     public String formatDate(String date){
         SimpleDateFormat sdf = new SimpleDateFormat("MMM dd yyyy");
         Date fDate = null;
@@ -438,26 +257,14 @@ public class BookingActivity extends AppCompatActivity {
         return sdfFormat.format(fDate);
     }
 
-<<<<<<< HEAD
     public void updatePrice(){
         //Updating Price
         priceText = findViewById(R.id.booking_price);
-=======
-
-    public void updatePrice(){
-        //Updating Price
-        priceText = findViewById(R.id.book_price);
->>>>>>> 360a270 (Update Proyek Reva - UI)
         priceCurrency = NumberFormat.getCurrencyInstance(new Locale("in", "ID")).format(roomPrice * calcDays(from, to));
         totalPay = priceCurrency;
         priceText.setText(priceCurrency);
     }
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 360a270 (Update Proyek Reva - UI)
     public long calcDays(String before, String after){
         SimpleDateFormat sdf = new SimpleDateFormat("MMM dd yyyy");
         Date dateBefore = null;
@@ -473,20 +280,11 @@ public class BookingActivity extends AppCompatActivity {
         return daysDiff;
     }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 360a270 (Update Proyek Reva - UI)
     public long simpleCalcDays(Date before, Date after){
         long timeDiff = Math.abs(after.getTime() - before.getTime());
         return TimeUnit.DAYS.convert(timeDiff, TimeUnit.MILLISECONDS);
     }
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 360a270 (Update Proyek Reva - UI)
     public String simpleDateFormat(Date date){
         SimpleDateFormat sdf = new SimpleDateFormat("MMM dd,yyyy");
         assert date != null;
@@ -495,11 +293,7 @@ public class BookingActivity extends AppCompatActivity {
 
 
     protected Payment requestBooking(int buyerId, int renterId, int roomId, String from, String to){
-<<<<<<< HEAD
         mApiService.createPayment(buyerId, renterId, roomId,from, to).enqueue(new Callback<Payment>() {
-=======
-        mApiService.createPayment(buyerId, renterId, roomId, from, to).enqueue(new Callback<Payment>() {
->>>>>>> 360a270 (Update Proyek Reva - UI)
             @Override
             public void onResponse(Call<Payment> call, Response<Payment> response) {
                 System.out.println("Membuat Booking");
@@ -511,19 +305,10 @@ public class BookingActivity extends AppCompatActivity {
                     Toast.makeText(mContext, "Booking Successful", Toast.LENGTH_LONG).show();
                     Intent move = new Intent(BookingActivity.this, MainActivity.class);
                     startActivity(move);
-<<<<<<< HEAD
                     MainActivity.loginacc.balance-= roomPrice * calcDays(from2, to2);
                 }
             }
 
-=======
-                    //MainActivity.loginacc.balance-= roomPrice * calcDays(from2, to2);
-                    requestAccount(MainActivity.loginacc.id);
-                }
-            }
-
-
->>>>>>> 360a270 (Update Proyek Reva - UI)
             @Override
             public void onFailure(Call<Payment> call, Throwable t) {
                 if(roomPrice * numDays  > accountBalance){
@@ -568,10 +353,6 @@ public class BookingActivity extends AppCompatActivity {
             public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                 if(response.isSuccessful()){
                     Toast.makeText(mContext, "Payment Canceled", Toast.LENGTH_LONG).show();
-<<<<<<< HEAD
-=======
-                    requestAccount(MainActivity.loginacc.id);
->>>>>>> 360a270 (Update Proyek Reva - UI)
                     Intent move = new Intent(BookingActivity.this, CancelPaymentActivity.class);
                     startActivity(move);
                 }
